@@ -540,8 +540,9 @@ find_forks()
         pkg_forks[${info[master]}]+=" ${1} "
     else
         echo "Find forks: ${1} ... ${pkg_nforks[${1}]} ..."
-        pkg_preferred[${1}]="${info[preferred]}"
-        pkg_nforks[${1}]=$[pkg_nforks[${1}]+1]
+        pkg_preferred["${1}"]="${info[preferred]}"
+        # pkg_nforks[${1}]=$[pkg_nforks[${1}]+1]
+	pkg_nforks[${1}]="1"
         pkg_forks[${1}]+=" ${1} "
         pkg_milestones[${1}]=`sort_versions ${info[milestones]}`
         pkg_relevantpattern[${1}]=${info[relevantpattern]}
