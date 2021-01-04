@@ -539,7 +539,7 @@ find_forks()
         pkg_nforks[${info[master]}]=$[pkg_nforks[${info[master]}]+1]
         pkg_forks[${info[master]}]+=" ${1} "
     else
-        echo "Find forks: ${1} ... ${pkg_nforks[${1}] ..."
+        echo "Find forks: ${1} ... ${pkg_nforks[${1}]} ..."
         pkg_preferred[${1}]="${info[preferred]}"
         pkg_nforks[${1}]=$[pkg_nforks[${1}]+1]
         pkg_forks[${1}]+=" ${1} "
