@@ -539,6 +539,7 @@ find_forks()
         pkg_nforks[${info[master]}]=$[pkg_nforks[${info[master]}]+1]
         pkg_forks[${info[master]}]+=" ${1} "
     else
+        echo "Find forks: ${1} ..."
         pkg_preferred[${1}]=${info[preferred]}
         pkg_nforks[${1}]=$[pkg_nforks[${1}]+1]
         pkg_forks[${1}]+=" ${1} "
@@ -664,6 +665,7 @@ gen_packages()
     # config file. Discover such relationships and only iterate
     # over "master" packages at the top.
     for p in "${pkg_all[@]}"; do
+	echo "${p} ..."
         find_forks "${p}"
     done
     msg "Master packages: ${pkg_masters[@]}"
