@@ -539,8 +539,8 @@ find_forks()
         pkg_nforks[${info[master]}]=$[pkg_nforks[${info[master]}]+1]
         pkg_forks[${info[master]}]+=" ${1} "
     else
-        echo "Find forks: ${1} ... ${pkg_nforks[${1}]} ..."
-        pkg_preferred[${1}]=${1} # ${info[preferred]}
+        echo "Find forks: ${1} ... ${info[preferred]}  ..."
+        pkg_preferred[${1}]=${info[preferred]}
         pkg_nforks[${1}]=$[pkg_nforks[${1}]+1]
         pkg_forks[${1}]+=" ${1} "
         pkg_milestones[${1}]=`sort_versions ${info[milestones]}`
@@ -654,6 +654,7 @@ gen_packages()
     local -A pkg_forks pkg_milestones pkg_nforks pkg_relevantpattern
     local -a pkg_masters pkg_all pkg_preferred
 
+    rm -rf packages/expa*
     pkg_all=( `cd packages && \
         ls */package.desc 2>/dev/null | \
         while read f; do [ -r "${f}" ] && echo "${f%/package.desc}"; done | \
