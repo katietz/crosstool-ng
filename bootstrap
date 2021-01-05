@@ -654,8 +654,6 @@ gen_packages()
     local -A pkg_forks pkg_milestones pkg_nforks pkg_relevantpattern
     local -a pkg_masters pkg_all pkg_preferred
 
-    rm -rf packages/expa/2.2*
-    rm -rf packages/gmp/6.1*
     pkg_all=( `cd packages && \
         ls */package.desc 2>/dev/null | \
         while read f; do [ -r "${f}" ] && echo "${f%/package.desc}"; done | \
@@ -778,7 +776,7 @@ gen_selection()
 
 msg "*** Generating menu/choice selections"
 config_gen_dir=config/gen
-rm -rf "${config_gen_dir}"
+# rm -rf "${config_gen_dir}"
 mkdir -p "${config_gen_dir}"
 
 gen_selection choice arch "Target Architecture"
