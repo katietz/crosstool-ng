@@ -695,7 +695,7 @@ gen_packages()
 
 msg "*** Generating package version descriptions"
 config_versions_dir=config/versions
-rm -rf "${config_versions_dir}"
+# rm -rf "${config_versions_dir}"
 mkdir -p "${config_versions_dir}"
 gen_packages
 
