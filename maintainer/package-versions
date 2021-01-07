@@ -1024,6 +1024,15 @@ run_pkgversion \
     pkg_name=gmp \
     pfx=GMP \
     versionlocked= \
+    ver=6.1.2 \
+    kcfg=6_1
+run_pkgversion \
+    master=gmp \
+    masterpfx=GMP \
+    originpfx= \
+    pkg_name=gmp \
+    pfx=GMP \
+    versionlocked= \
     ver=6.0.0a \
     kcfg=6_0
 run_pkgversion \
